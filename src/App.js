@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Header from './MenuTop'
+import axios from 'axios'
+import NovoGenero from './NovoGenero'
+import EditarGenero from './UpdateGenero'
+import Generos from './generos'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
+
+
+const Home = () => {
+  return <h1>home</h1>
 }
 
-export default App;
+function App () {
+  return (
+    <Router>
+      <div>
+        <Header />
+        <Route path='/' exact component={Home} />
+        <Route path='/generos/novo' exact component={NovoGenero} />
+        <Route path='/generos/:id' exact component={EditarGenero} />
+        <Route path='/generos' exact component={Generos} />
+
+      </div>
+    </Router>
+  )
+}
+
+export default App
