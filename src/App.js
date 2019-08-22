@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Header from './MenuTop'
-import axios from 'axios'
 import NovoGenero from './NovoGenero'
-import EditarGenero from './UpdateGenero'
+import EditarGenero from './EditarGenero'
 import Generos from './generos'
 
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
-
-
 const Home = () => {
   return <h1>home</h1>
 }

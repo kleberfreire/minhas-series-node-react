@@ -3,7 +3,6 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 const EditarGenero = ({ match }) => {
-  
   const [name, setName] = useState('')
   const [success, setSuccess] = useState(false)
   const onChange = evs => {
@@ -15,21 +14,21 @@ const EditarGenero = ({ match }) => {
       .get('/api/genres/' + match.params.id)
       .then(res => setName(res.data.name))
   }, [match.params.id])
-  
+
   const onSave = () => {
     try {
-      axios.put('/api/genres/' + + match.params.id, {
+      axios.put('/api/genres/' + match.params.id, {
         name
       }).then(res => {
         setSuccess(true)
       })
     } catch (err) {
-      console.log(err)
+
     }
   }
   console.log(match)
   if (success) {
-   return <Redirect to='/generos' />
+    return <Redirect to='/generos' />
   }
 
   return (
