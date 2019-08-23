@@ -26,7 +26,7 @@ const EditarGenero = ({ match }) => {
 
     }
   }
-  console.log(match)
+
   if (success) {
     return <Redirect to='/generos' />
   }

@@ -6,7 +6,8 @@ import Generos from './generos'
 
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom'
 const Home = () => {
   return <h1>home</h1>
@@ -17,10 +18,12 @@ function App () {
     <Router>
       <div>
         <Header />
-        <Route path='/' exact component={Home} />
-        <Route path='/generos/novo' exact component={NovoGenero} />
-        <Route path='/generos/:id' exact component={EditarGenero} />
-        <Route path='/generos' exact component={Generos} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/generos' component={Generos} />
+          <Route exact path='/generos/novo' component={NovoGenero} />
+          <Route exact path='/generos/:id' component={EditarGenero} />
+        </Switch>
 
       </div>
     </Router>
