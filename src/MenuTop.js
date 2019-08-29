@@ -18,15 +18,20 @@ const Header = (props) => {
   return (
     <div>
       <Navbar color='light' light expand='md' >
-        <NavbarBrand tag={Link} to='/'>Minhas Séries</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={open} navbar>
-          <Nav className='ml-auto' navbar>
-            <NavItem >
-              <NavLink tag={Link} to='/generos' href='/generos'>Generos</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
+        <div className='container'>
+          <NavbarBrand tag={Link} to='/'>Minhas Séries</NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={open} navbar>
+            <Nav className='ml-auto' navbar>
+              <NavItem >
+                <NavLink tag={Link} to='/generos' href='/generos'>Genêros</NavLink>
+              </NavItem>
+              <NavItem >
+                <NavLink tag={Link} to='/series' href='/generos'>Séries</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </div>
       </Navbar>
     </div>
   )
